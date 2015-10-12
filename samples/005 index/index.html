@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="indexApp">
+	<head>
+		<script src="../node_modules/angular/angular.js">
+		</script>
+		<script src="index.js"></script>
+	</head>
+	<body ng-controller="IndexController">
+		<h1>$index</h1>
+		<ul>
+			<li ng-repeat="fruit in fruits track by $index">
+				{{fruit}}
+				<a ng-click="removeFruit($index)">X</a>
+			</li>
+		</ul>
+		<button ng-click="addFruit()">Add</button>
+	</body>
+</html>

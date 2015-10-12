@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="bindingsApp">
+	<head>
+		<script src="../node_modules/angular/angular.js"></script>
+		<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+		
+		<script src="bindings.js"></script>
+	</head>
+	<body class="container" ng-controller="bindingsController">
+		<h1>Bindings</h1>
+		<div class="row">
+			<div class="col-xs-12">
+				<test-bindings on-send="sendMessage()"	
+								user-name="{{currentUser}}"
+								message="newMessage">
+				</test-bindings>
+			</div>
+		</div>
+	</body>
+</html>

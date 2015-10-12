@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<script src="../node_modules/angular/angular.js"></script>
+	</head>
+	<body>
+		<h1>2-way Data Binding</h1>
+		<div>
+			Zahl 1 <input type="number" ng-model="above" />
+		</div>
+		<div>
+			Zahl 2 <input type="number" ng-model="below" />
+		</div>
+		
+		<div>Summe {{above + below}}</div>
+		
+		<div>
+			<!-- Second field to demonstrate two-way -->
+			<input type="number" ng-model="above" />
+		</div>
+	</body>
+</html>
+

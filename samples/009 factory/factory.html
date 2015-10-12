@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="factoryApp">
+	<head>
+		<script src="../node_modules/angular/angular.js"></script>
+		<script src="data.js"></script>
+		<script src="factoryApp.js"></script>
+		<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+	</head>
+	<body class="container">
+		<h1>Factories</h1>
+		
+		<div class="col-xs-6"  ng-controller="FactoryController">
+			<ul>
+				<li ng-repeat="fruit in fruits">
+					{{ fruit }}
+				</li>
+			</ul>	
+			<input class="form-control" type="text" ng-model="newFruit" />
+			<button class="btn btn-primary" ng-click="addFruit(newFruit)">Add</button>		
+		</div>
+		<div class="col-xs-6"  ng-controller="FactoryController">
+			<ul>
+				<li ng-repeat="fruit in fruits">
+					{{ fruit }}
+				</li>
+			</ul>
+			<input class="form-control" type="text" ng-model="newFruit" />
+			<button class="btn btn-primary" ng-click="addFruit(newFruit)">Add</button>
+		</div>
+	</body>
+</html>

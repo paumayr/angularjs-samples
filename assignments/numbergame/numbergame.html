@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="numbergameApp">
+	<head>
+		<script src="../node_modules/angular/angular.js"></script>
+		<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+		<script src="numbergame.js"></script>
+		<style>
+			.top-buffer { margin-top:20px; }
+		</style>
+	</head>
+	
+	<body class="container" ng-controller="numbergameController">
+		<h1>Number game</h1>
+
+		<div>		
+			Guess a number between 0 and 100
+		</div>
+		
+		<div>
+			Number of tries: {{guessCount}}
+		</div>
+		<div class="top-buffer"></div>
+		
+		<form class="form-inline">
+			<div class="form-group">
+				<input class="form-control" type="number" ng-model="currentGuess">
+			</div>
+			<button class="btn btn-primary" ng-click="check()">Check</button>
+		</form>
+		<div class="top-buffer"></div>
+		
+		<div class="alert alert-danger" ng-show="result && result != 'correct'">
+			You entered a number that is 
+			<span ng-show="result == 'toohigh'">too high! Pick a smaller number!</span>
+			<span ng-show="result == 'toolow'">too low! Pick a higher number!</span>
+		</div>
+
+		<div class="alert alert-success" ng-show="result && result == 'correct'">
+			Congratulations, you entered the correct number: {{theNumber}} !
+		</div>
+	</body>
+</html>
+

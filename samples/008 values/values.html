@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="ValuesApp">
+	<head>
+		<script src="../node_modules/angular/angular.js"></script>
+		<script src="constants.js"></script>
+		<script src="values.js"></script>
+		<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+	</head>
+	<body ng-controller="ValuesController">
+		<h1>Values and Constants</h1>
+		
+		<div class="input-group">
+			<span class="input-group-addon">Distance</span>
+			<input class="form-control" type="number" ng-model="distance">
+			<span class="input-group-addon">km</span>
+		</div>
+		<div>Takes {{ getDuration() }} seconds at the speed of sound.</div>
+		<div>ConnectionString is {{connectionString}}</div>
+	</body>
+</html>
+

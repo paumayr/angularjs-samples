@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="isolateScopeApp">
+	<head>
+		<script src="../node_modules/angular/angular.js"></script>
+		<script src="isolatescope.js"></script>
+		<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+	</head>
+	<body class="container">
+		<h1>My Custom Directive (with Isolate Scope)</h1>
+		<div class="row">
+			<div class="col-xs-12">
+				<my-custom-directive greeting-name="'Homer'"></my-custom-directive>
+			</div>
+			<div class="col-xs-6">
+				<my-custom-directive greeting-name="'Marge'"></my-custom-directive>
+			</div>
+		</div>
+	</body>
+</html>

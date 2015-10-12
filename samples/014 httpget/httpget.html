@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="httpgetApp">
+	<head>
+		<script src="../node_modules/angular/angular.js"></script>
+		<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+		<script src="httpget.js"></script>
+	</head>
+	<body>
+		<div class="container" ng-controller="httpgetController">
+			<h1>Http GET</h1>
+			<button class="btn btn-primary" ng-click="getFruits()">Get Fruits</button>
+			<ul>
+				<li ng-repeat="fruit in fruits">
+					{{fruit}}
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

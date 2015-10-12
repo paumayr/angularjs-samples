@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<script src="../node_modules/angular/angular.js"></script>
+		<link rel="stylesheet" href="ngclass.css">
+	</head>
+	<body>
+		<div ng-class="'rect'">
+		</div>
+		
+		<div class="rect" ng-class="{ 'on' : 4 + 2 > 3, 'off' : 3 > 5 }">
+		</div>
+		
+		<div ng-class="['rect', { 'on' : 4 + 2 > 8, 'off' : 6 > 5 }]">
+		</div>
+	</body>
+</html>
+

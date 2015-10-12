@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app="repeatApp">
+	<head>
+		<script src="../node_modules/angular/angular.js"></script>
+		<script srC="repeat.js"></script>
+	</head>
+	<body ng-controller="RepeatController">
+		<h1>Repeat - List of Fruits</h1>
+		<ul>
+			<li ng-repeat="fruit in fruits">
+				{{ fruit }}
+			</li>
+		</ul>
+	</body>
+</html>

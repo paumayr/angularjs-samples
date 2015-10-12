@@ -1,0 +1,13 @@
+.rect {
+	width: 100px;
+	height: 100px;
+	border: solid black 1px;
+}
+
+.on {
+	border: solid green 2px;
+}
+
+.off {
+	border: solid red 2px;
+}

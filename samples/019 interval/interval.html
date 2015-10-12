@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="intervalApp">
+	<head>
+		<script src="../node_modules/angular/angular.js"></script>
+		<script src="interval.js"></script>
+	</head>
+	
+	<body ng-controller="intervalController">
+		<div>
+			Elapsed: {{elapsed}} ms
+		</div>
+		<button ng-click="start()">Start</button>
+		<button ng-click="stop()">Stop</button>
+		<button ng-click="reset()">Reset</button>
+	</body>
+</html>

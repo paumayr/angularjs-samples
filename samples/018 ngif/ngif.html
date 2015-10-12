@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="ngifApp">
+	<head>
+		<script src="../node_modules/angular/angular.js"></script>
+		<script src="ngif.js"></script>
+	</head>
+	<body ng-controller="ngifController">
+		<button ng-click="toggleValue()">Toggle</button>
+		<div ng-if="theValue">
+			<div ng-controller="nestedController">
+				<div ng-repeat="fruit in fruits">{{fruit}}</div>
+			</div>
+		</div>
+	</body>
+</html>
+

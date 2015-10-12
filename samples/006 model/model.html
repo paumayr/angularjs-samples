@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="modelApp">
+	<head>
+		<script src="../node_modules/angular/angular.js"></script>
+		<script src="model.js"></script>
+	</head>
+	<body ng-controller="ModelController">
+		<h1>ng-model</h1>
+		
+		<ul>
+			<li ng-repeat="fruit in fruits track by $index">
+				{{fruit}}
+				<a ng-click="removeFruit($index)">X</a>
+			</li>
+		</ul>
+		<input ng-model="newFruit" />
+		<button ng-click="addFruit(newFruit)">Add</button>
+	</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="clickApp">
+	<head>
+		<script src="../node_modules/angular/angular.js"></script>
+		<script src="click.js"></script>
+	</head>
+	<body ng-controller="ClickController">
+		<h1>Fruits</h1>
+		<ul>
+			<li ng-repeat="fruit in fruits track by $index">
+				{{fruit}}
+			</li>
+		</ul>
+		<button ng-click="addFruit()">Add</button>
+	</body>
+</html>

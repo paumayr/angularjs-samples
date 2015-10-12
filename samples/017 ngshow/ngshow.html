@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<script src="../node_modules/angular/angular.js"></script>
+		<link rel="stylesheet" 
+			href="../node_modules/bootstrap/dist/css/bootstrap.css">
+	</head>
+	<body>
+		<h1>NG-Show</h1>
+		
+		<input ng-init="theValue = 50" 
+				type="number" class="form-control" ng-model="theValue">
+		
+		<div class="alert alert-danger" ng-show="theValue > 100">
+			Value is too high!
+		</div>
+		
+		<div class="alert alert-success" ng-hide="theValue > 100">
+			Value is ok!
+		</div>
+	</body>
+</html>
+
