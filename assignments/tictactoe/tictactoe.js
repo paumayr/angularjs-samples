@@ -38,17 +38,17 @@ function hasWon() {
 	];
 	
 	for (var i = 0; i < 3; i++) {
-		if (rowCheck[i]) {
+		if (rowCheck[i] && game[i][0]) {
 			return game[i][0];
 		}
 		
-		if (colCheck[i]) {
+		if (colCheck[i] && game[0][i]) {
 			return game[0][i];
 		}
 	}
 	
 	for (var i = 0; i < 2; i++) {
-		if (diagCheck[i]) {
+		if (diagCheck[i] && game[1][1]) {
 			return game[1][1];
 		}
 	}
