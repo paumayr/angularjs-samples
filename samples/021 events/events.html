@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="eventsApp">
+	<head>
+		<script src="../node_modules/angular/angular.js"></script>
+		<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+		<script src="events.js"></script>
+	</head>
+	<body ng-controller="eventsController" class="container">
+		<h1>Events</h1>
+		
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				This is the application Scope. Clicking Broadcast sends a message to nested scopes
+				<button ng-click="broadcastMessage()">Broadcast</button>
+			</div>			
+			<div class="panel-body">
+				Message from Nested:
+				<div>
+					{{currentMessage}}
+				</div>
+			</div>
+		</div>
+		
+		<div class="panel panel-default" ng-controller="nestedController">
+			<div class="panel-heading">Nested Controller 1:</div>
+			<div class="panel-body">
+				<div>{{currentMessage}}</div>
+				<div>Send a message to parent scope:
+					<input type="text" ng-model="message">
+					<button ng-click="emitMessage()">Emit</button>
+				</div>
+			</div>
+		</div>
+		
+		<div class="panel  panel-default" ng-controller="nestedController">
+			<div class="panel-heading">Nested Controller 2:</div>
+			<div class="panel-body">
+				<div>{{currentMessage}}</div>
+				<div>Send a message to parent scope:
+					<input type="text" ng-model="message">
+					<button ng-click="emitMessage()">Emit</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

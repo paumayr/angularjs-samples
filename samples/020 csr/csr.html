@@ -5,20 +5,30 @@
 		<script src="../node_modules/angular-route/angular-route.js"></script>
 		<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
 		<script src="csr.js"></script>
-		<script src="partials/home.js"></script>
+		<script src="partials/home.js"></script>~
 		<script src="partials/messages.js"></script>
 		<script src="partials/profile.js"></script>
 	</head>
 	
-	<body ng-controller="MainController">
+	<body ng-controller="MainController" class="container">
 		<h1>Routing Example</h1>
 		
 		<ul class="nav nav-tabs">
-			<li role="presentation" ng-class="{ 'active' : $route.current.activeTab == 'Home' }"><a href="#/Home">Home</a></li>
-			<li role="presentation" ng-class="{ 'active' : $route.current.activeTab == 'Profile' }"><a href="#/Profile">Profile</a></li>
-			<li role="presentation" ng-class="{ 'active' : $route.current.activeTab == 'Messages' }"><a href="#/Messages">Messages</a></li>
+			<li role="presentation"
+				ng-class="{ 'active' : $route.current.activeTab == 'Home' }">
+				<a href="#/Home">Home</a>
+			</li>
+			<li role="presentation"
+				ng-class="{ 'active' : $route.current.activeTab == 'Profile' }">
+				<a href="#/Profile">Profile</a>
+			</li>
+			<li role="presentation"
+				ng-class="{ 'active' : $route.current.activeTab == 'Messages' }">
+				<a href="#/Messages">Messages</a>
+			</li>
 		</ul>
 		
 		<ng-view></ng-view>
 	</body>
 </html>
+
