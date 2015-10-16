@@ -7,7 +7,7 @@ app.use( bodyParser.json() );
 app.use(express.static('./'));
 
 var fruits = ['Apples', 'Bananas', 'Limes'];
-app.get('/014%20httpget/fruits', function(req, res) {
+app.get('/014%20fruits/fruits', function(req, res) {
   res.send(JSON.stringify(fruits));
 });
 

@@ -39,22 +39,25 @@ function($scope, $http, $interval) {
 	
 	$scope.isChecking = false;
 	$scope.check = function() {
-		$scope.isChecking = true;
-		$http.get('/try/' + $scope.gameId + '/' + $scope.currentGuess)
-		.then(function(response) {
-			$scope.isChecking = false;
-			$scope.currentGuess = null;
-			$scope.guessCount = response.data.guessCount;
-			$scope.result = response.data.result;
-			if ($scope.result == 'correct') {
-				$scope.theNumber = response.data.theNumber;
-				$scope.stopTimer();
-			}
-		},
-		function() {
-			/* error */
-			$scope.isChecking = false;
-		});
+		if ($scope.currentGuess != null && $scope.currentGuess != undefined)
+		{
+			$scope.isChecking = true;
+			$http.get('/try/' + $scope.gameId + '/' + $scope.currentGuess)
+			.then(function(response) {
+				$scope.isChecking = false;
+				$scope.currentGuess = null;
+				$scope.guessCount = response.data.guessCount;
+				$scope.result = response.data.result;
+				if ($scope.result == 'correct') {
+					$scope.theNumber = response.data.theNumber;
+					$scope.stopTimer();
+				}
+			},
+			function() {
+				/* error */
+				$scope.isChecking = false;
+			});
+		}
 	}
 }]);
 

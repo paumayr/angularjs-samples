@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<script src="node_modules/angular/angular.js"></script>
+		<link rel="stylesheet" href="scratchpad.css">
+	</head>
+	<body>
+		<h1>Scratchpad</h1>
+		
+		<input type="number" ng-model="myNumber">
+		
+		<div ng-class="{ 'small' : myNumber < 10, 'medium' : myNumber >= 10 && myNumber < 100 }">
+			Here goes content
+		</div>
+	</body>
+</html>

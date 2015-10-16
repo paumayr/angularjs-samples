@@ -30,7 +30,7 @@ app.get('/try/:id/:guess', function(req, res) {
     console.log('game ' + game.id + ': ' + guess + ' is too high!');
     res.send(JSON.stringify({ result: 'toohigh', guessCount: game.guessCount }));
   } else if (guess < game.theNumber) {
-    console.log('game ' + game.id + ': ' + guess + ' is too high!');
+    console.log('game ' + game.id + ': ' + guess + ' is too low!');
     res.send(JSON.stringify({ result: 'toolow', guessCount: game.guessCount }));
   }
 });
