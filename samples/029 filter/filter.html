@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="filterApp">
+	<head>
+		<script src="../node_modules/angular/angular.js"></script>
+		<script src="filter.js"></script>
+		<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+	</head>
+	<body class="container" ng-controller="filterController">
+		<h1>Filter</h1>
+		
+		<label>MyNumber (no filter)</label>
+		<div class="form-control-static">{{ myNumber }}</div>
+		
+		<label>MyNumber (number filter)</label>
+		<div class="form-control-static">{{ myNumber | number : 2 }}</div>
+
+		<h1>Filter-Filter</h1>
+		<label>Filter: </label>
+		<input type="text" ng-model="name">
+		<ul>
+			<li ng-repeat="person in people | filter:name">
+				{{person.first}}
+			</li>
+		</ul>
+		
+		<h1>Custom Filter</h1>
+		<ul>
+			<li ng-repeat="person in people | orderByLength">
+				{{person.first}}
+			</li>
+		</ul>
+
+	</body>
+</html>

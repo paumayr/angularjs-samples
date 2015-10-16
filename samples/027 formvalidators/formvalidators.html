@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<script src="../node_modules/angular/angular.js"></script>
+		<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+		<link rel="stylesheet" href="forms.css">
+		<!-- <script src="forms.js"></script> -->
+	</head>
+	
+	<body class="container">
+		<h1>Forms</h1>
+		<form name="userInfoForm">
+			<div class="form-group">
+				<label>Name</label>
+				<input type="text"
+						class="form-control"
+						name="name"
+						placeholder="Vorname" 
+						ng-model="name"
+						required
+						ng-minlength="3"
+						ng-maxlength="15">
+						
+				<p class="help-block"
+						ng-show="userInfoForm.name.$error.required">
+					You must enter a name.
+				</p>
+				
+				<p class="help-block"
+						ng-show="userInfoForm.name.$error.minlength">
+					Name must be at least 3 characters long.
+				</p>
+				
+				<p class="help-block"
+						ng-show="userInfoForm.name.$error.maxlength">
+					Name must be at most 15 characters long.
+				</p>
+			</div>
+			<div class="form-group">		
+				<label>Email</label>
+				<input type="email"
+						class="form-control"
+						name="email"
+						placeholder="Email" 
+						ng-model="email"
+						required>
+				<p class="help-block"
+						ng-show="userInfoForm.email.$error.email">
+					 Must be a valid email address.
+				</p>
+				
+				<p class="help-block"
+						ng-show="userInfoForm.email.$error.required">
+					Email field is required.
+				</p>
+			</div>
+						
+			<button  class="btn btn-primary" ng-disabled="userInfoForm.$invalid">Save</button>
+		</form>
+	</body>
+</html>

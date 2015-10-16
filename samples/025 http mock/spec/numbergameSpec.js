@@ -8,7 +8,7 @@ describe('SampleController Suite', function () {
      // Set up the mock http service responses
      $httpBackend = $injector.get('$httpBackend');
      // backend definition common for all tests
-    $httpBackend.when('POST', '/newgame')
+     $httpBackend.when('POST', '/newgame')
                             .respond({ id: 2, guessCount: 0});
                             
       var tryUri = /\/try\/(.+)\/(.+)/;     
@@ -26,6 +26,8 @@ describe('SampleController Suite', function () {
         }
         return [200, { result: result, guessCount: 3 }];
       })
+      
+      
 
      // Get hold of a scope (i.e. the root scope)
      $rootScope = $injector.get('$rootScope');

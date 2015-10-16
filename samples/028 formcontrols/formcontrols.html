@@ -1,0 +1,61 @@
+<DOCTYPE html>
+<html ng-app="formcontrolsApp">
+	<head>
+		<script src="../node_modules/angular/angular.js"></script>
+		<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+		<script src="formcontrols.js"></script>
+	</head>
+	<body class="container" ng-controller="formcontrolsController">
+		<h1>Controls</h1>
+		<form name="regform">
+			<div class="form-group">
+				<label>Name</label>
+				<input class="form-control" type="text" ng-model="name" name="name"
+						required ng-minlength="3">
+				<span class="glyphicon glyphicon-ok"
+						ng-show="regform.name.$valid && !regform.name.$pristine"></span>
+			</div>
+			
+			<div class="form-group">
+				<label>Age</label>
+				<input class="form-control" type="number" ng-model="age" name="age">
+			</div>
+			
+			<div class="form-group">
+				<label>Citizenship</label>
+				<select
+					class="form-control"
+					ng-model="citizen" 
+					ng-options="country.code as country.display for country in countries"></select>
+			
+				<div class="help-block">
+					Selected Code: {{citizen}}
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<input type="checkbox" ng-model="newsletter">
+				<label>Newsletter?</label>	
+			</div>
+			
+			<div class="form-group">
+				<label>Delivery Options</label>
+		
+				<div>
+					<input type="radio" ng-model="delivery" value="standard">
+					<span>Standard</span>
+				
+					<input type="radio" ng-model="delivery" value="priority">
+					<span>Priority</span>
+				
+					<input type="radio" ng-model="delivery" value="ups">
+					<span>UPS</span>
+				</div>
+				
+				<div class="help-block">
+					Selected Delivery: {{ delivery }}
+				</div>
+			</div>
+		</form>
+	</body>
+</html>
