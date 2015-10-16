@@ -43,7 +43,12 @@
 						name="email"
 						placeholder="Email" 
 						ng-model="email"
+						ng-pattern="/[\w]*\@r-software.at/"
 						required>
+				<p class="help-block"
+						ng-show="userInfoForm.email.$error.pattern">
+					Must be a r-software.at address
+				</p>
 				<p class="help-block"
 						ng-show="userInfoForm.email.$error.email">
 					 Must be a valid email address.

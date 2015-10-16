@@ -18,7 +18,7 @@
 		<label>Filter: </label>
 		<input type="text" ng-model="name">
 		<ul>
-			<li ng-repeat="person in people | filter:name">
+			<li ng-repeat="person in people | filter:name | limitTo: 3">
 				{{person.first}}
 			</li>
 		</ul>
