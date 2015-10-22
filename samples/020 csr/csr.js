@@ -1,4 +1,4 @@
-var app = angular.module('csrApp', ['ngRoute', 'Home', 'Profile', 'Messages']);
+var app = angular.module('csrApp', ['ngRoute', 'Home', 'Profile', 'Messages', 'MessagesService']);
 
 app.controller('MainController', ['$scope', '$route', function($scope, $route) {
     $scope.$route = $route;  

@@ -16,17 +16,17 @@
 
 		<h1>Filter-Filter</h1>
 		<label>Filter: </label>
-		<input type="text" ng-model="name">
+		<input type="text" ng-model="searchName">
 		<ul>
-			<li ng-repeat="person in people | filter:name | limitTo: 3">
-				{{person.first}}
+			<li ng-repeat="person in people | filter:searchName">
+				{{person.name}}
 			</li>
 		</ul>
 		
 		<h1>Custom Filter</h1>
 		<ul>
 			<li ng-repeat="person in people | orderByLength">
-				{{person.first}}
+				{{person.name}}
 			</li>
 		</ul>
 
