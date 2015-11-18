@@ -3,9 +3,9 @@ var app = angular.module('watchApp', []);
 app.controller('watchController', 
 ['$scope', '$log', 
 function($scope, $log) {
-	var watchFunc = function(newValue, oldValue) {
+	$scope.$watch('message + message2', function(newValue, oldValue) {
 		$log.info('newValue: ' + newValue + ' oldValue:' + oldValue);
-	};
-	$scope.$watch('message', watchFunc);
+		$scope.message += 'haha';
+	});
 }]);
 

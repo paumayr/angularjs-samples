@@ -13,6 +13,10 @@
 		
 		<div ng-class="['rect', { 'on' : 4 + 2 > 8, 'off' : 6 > 5 }]">
 		</div>
+		
+		<input type="number" ng-model="level" >
+		<div class="rect" ng-class="{ 'on' : level > 10 }">
+		</div>
 	</body>
 </html>
 

@@ -16,23 +16,30 @@ app.post('/newgame', function(req, res) {
 });
 
 app.get('/try/:id/:guess', function(req, res) {
+
   var gameId = req.params.id;
   var guess = req.params.guess;
-  var game = games[gameId];
-  game.guessCount++;
-  
-  if (game.theNumber == guess) {
-    console.log('game ' + game.id + ': finished!');
-    game.endTime = new Date().getTime();
-    game.finished = true;
-    res.send(JSON.stringify({ result: 'correct', guessCount: game.guessCount, theNumber: game.theNumber }));
-  } else if (guess > game.theNumber) {
-    console.log('game ' + game.id + ': ' + guess + ' is too high!');
-    res.send(JSON.stringify({ result: 'toohigh', guessCount: game.guessCount }));
-  } else if (guess < game.theNumber) {
-    console.log('game ' + game.id + ': ' + guess + ' is too low!');
-    res.send(JSON.stringify({ result: 'toolow', guessCount: game.guessCount }));
+
+  if (gameId >= 0 && gameId < games.length && guess >= 0 && guess <= 100 ) {
+    var game = games[gameId];
+    game.guessCount++;
+    
+    if (game.theNumber == guess) {
+      console.log('game ' + game.id + ': finished!');
+      game.endTime = new Date().getTime();
+      game.finished = true;
+      res.send(JSON.stringify({ result: 'correct', guessCount: game.guessCount, theNumber: game.theNumber }));
+    } else if (guess > game.theNumber) {
+      console.log('game ' + game.id + ': ' + guess + ' is too high!');
+      res.send(JSON.stringify({ result: 'toohigh', guessCount: game.guessCount }));
+    } else if (guess < game.theNumber) {
+      console.log('game ' + game.id + ': ' + guess + ' is too low!');
+      res.send(JSON.stringify({ result: 'toolow', guessCount: game.guessCount }));
+    }
+  } else {
+    res.sendStatus(400);
   }
+  
 });
 
 var server = app.listen(3000, function () {

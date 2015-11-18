@@ -39,7 +39,7 @@ function($scope, $http, $interval) {
 	
 	$scope.isChecking = false;
 	$scope.check = function() {
-		if ($scope.currentGuess != null && $scope.currentGuess != undefined)
+		if (true)/* $scope.currentGuess != null && $scope.currentGuess != undefined) */
 		{
 			$scope.isChecking = true;
 			$http.get('/try/' + $scope.gameId + '/' + $scope.currentGuess)

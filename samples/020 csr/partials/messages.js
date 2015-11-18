@@ -4,6 +4,7 @@ messages.controller('MessagesController', ['$scope', 'messages', function($scope
 	$scope.messages = messages;
 }]);
 
+
 messages.controller('MessageController', 
 ['$scope', '$routeParams', 'messages', 
 function($scope, $routeParams, messages) {

@@ -7,32 +7,31 @@
 		<!-- <script src="forms.js"></script> -->
 	</head>
 	
-	<body class="container">
+	<body class="container" ng-init="name = 'Phil'; email = 'phil@r-software.at'">
 		<h1>Forms</h1>
 		<form name="userInfoForm">
 			<div class="form-group">
 				<label>Name</label>
 				<input type="text"
 						class="form-control"
-						name="name"
+						name="nameCtrl"
 						placeholder="Vorname" 
 						ng-model="name"
-						required
 						ng-minlength="3"
 						ng-maxlength="15">
-				<div ng-show="userInfoForm.name.$dirty">
+				<div ng-show="userInfoForm.$dirty">
 					<p class="help-block"
-							ng-show="userInfoForm.name.$error.required">
+							ng-show="userInfoForm.nameCtrl.$error.required">
 						You must enter a name.
 					</p>
 					
 					<p class="help-block"
-							ng-show="userInfoForm.name.$error.minlength">
+							ng-show="userInfoForm.nameCtrl.$error.minlength">
 						Name must be at least 3 characters long.
 					</p>
 					
 					<p class="help-block"
-							ng-show="userInfoForm.name.$error.maxlength">
+							ng-show="userInfoForm.nameCtrl.$error.maxlength">
 						Name must be at most 15 characters long.
 					</p>
 				</div>
@@ -45,7 +44,7 @@
 						placeholder="Email" 
 						ng-model="email"
 						ng-pattern="/[\w]*\@r-software.at/"
-						required>
+						ng-required="name == 'phil'">
 				<p class="help-block"
 						ng-show="userInfoForm.email.$error.pattern">
 					Must be a r-software.at address
@@ -60,8 +59,11 @@
 					Email field is required.
 				</p>
 			</div>
-						
-			<button  class="btn btn-primary" ng-disabled="userInfoForm.$invalid">Save</button>
+			
+			<input type="password" ng-model="pw">
+			<input type="password" ng-model="pwConfirm">
+								
+			<button  class="btn btn-primary" ng-disabled="userInfoForm.$pristine || userInfoForm.$invalid">Save</button>
 		</form>
 	</body>
 </html>

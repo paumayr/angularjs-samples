@@ -8,11 +8,9 @@
 		<h1>Fruits</h1>
 		<ul>
 			<li ng-repeat="fruit in fruits track by $index">
-				{{fruit}}
+				{{$index}} - {{fruit}}
 			</li>
 		</ul>
 		<button ng-click="addFruit()">Add</button>
-		
-		<button ng-click="vm.doAlert()">Do Alert</button>
 	</body>
 </html>

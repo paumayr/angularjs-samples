@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="sceApp">
+	<head>
+		<script src="../node_modules/angular/angular.js"></script>
+		<script src="sce.js"></script>
+	</head>
+	<body ng-controller="sceController">
+		<H1>Strict Contextual Escaping</H1>
+		
+		<label>Enter HTML</label><br>
+		<textarea rows="5" type="text" ng-model="userHTML"
+				ng-model-options="{ 'updateOn' : 'blur' }"></textarea>
+		
+		<br>
+		<h3>bound via { { } }<h3>
+		<div>
+			{{userHTML}}
+		</div>
+
+	<!--	<br>
+		<h3>bound via ng-bind-html</h3>
+		<div ng-bind-html="userHTML">
+		</div>
+-->
+		<br>
+		<h3>bound via ng-bind-html / sce value</h3>
+		<div ng-bind-html="safeUserHTML">
+		</div>
+	</body>
+</html>

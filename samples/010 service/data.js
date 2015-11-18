@@ -1,10 +1,9 @@
-var dataModule = angular.module('data', []);
-
-dataModule.service('DataService', function () {
+angular.module('data', [])
+.service('DataService', function () {
 	var that = this;
 	this.fruits = ['Apples', 'Bananas', 'Limes'];
 	 
-	this.getFruits = () => {
+	this.getFruits = function() {
 		return that.fruits;
 	};
 	

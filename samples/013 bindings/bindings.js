@@ -6,18 +6,28 @@ app.controller('bindingsController', ['$scope', function($scope) {
 	$scope.sendMessage = function() {
 		alert('sending Message ' + $scope.newMessage);
 	};
+	
+	$scope.alertUser = function() {
+		alert('send!');
+	};
+}]);
+
+app.controller('testBindingsController', ['$scope',
+	function($scope) {
+		$scope.doLogMessage = function() {
+			console.log("username: " + $scope.username);
+			$scope.onSend();	
+		};	
 }]);
 
 app.directive('testBindings', function() {
 	return {
-		template: '<div>Hello, {{userName}}: '+
-		'<input type="text" ng-model="message" />' +
-		'<button class="btn btn-primary" ng-click="onSend()">Send</button>' + 
-		'</div>',
+		templateUrl: 'testBindings.html',
 		scope: {
 			userName: '@',
 			message: '=',
 			onSend: '&'
-		}
+		},
+		controller: 'testBindingsController'
 	}
 });

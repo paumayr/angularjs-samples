@@ -6,7 +6,11 @@ app.controller('IndexController', ['$scope', function($scope) {
 		$scope.fruits.push('Boysenberry');	
 	};
 	$scope.removeFruit = function(index) {
-		$scope.fruits.splice(index, 1);	
+		$scope.fruits.splice(index, 1);
 	};
+}]);
+
+app.controller('nestedScopeController', ['$scope', function($scope) {
+	console.log('asdf');
 }]);
 
