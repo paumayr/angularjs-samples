@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="componentLifecycleApp">
+    <head>
+        <script src="../node_modules/angular/angular.js"></script>
+        <script src="componentlifecycle.js"></script>
+        <script src="testComponentModule.js"></script>
+    </head>
+    <body>
+        <H1>Component Lifecycle</H1>
+    
+        <div>
+            <input type="checkbox" ng-model="showComponent"> Show Module    
+        </div>
+        
+        <div>
+             myValue: <input type="text" ng-model="myValue">
+        </div>
+    
+        <div ng-if="showComponent">
+            <test-component some-parameter="myValue"></test-component>
+        </div>
+    </body>
+</html>

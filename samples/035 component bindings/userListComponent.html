@@ -1,0 +1,8 @@
+<div>
+    Participants:
+    <ul>
+        <li ng-repeat="person in $ctrl.persons">
+            <button ng-click="$ctrl.onPersonSelected({ person: person })">{{person.last}}, {{person.first}}</button>
+        </li>
+    </ul>
+</div>

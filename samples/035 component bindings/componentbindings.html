@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="componentBindings">
+    <head>
+        <script src="../node_modules/angular/angular.js"></script>
+        <script src="componentbindings.js"></script>
+        <script src="userListComponent.js"></script>
+    </head>
+    <body ng-controller="appController">
+        <H1>Component bindings</H1>
+        
+        <user-list-component
+                persons="characters"
+                on-person-selected="onSelectCharacter(person)">
+        </user-list-component>
+    </body>
+</html>
