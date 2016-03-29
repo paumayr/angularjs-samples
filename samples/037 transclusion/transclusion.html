@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="transclusionApp">
+    <head>
+        <script src="../node_modules/angular/angular.js"></script>
+        <script src="transclusion.js"></script>
+    </head>
+    
+    <body ng-controller="transclusionController">
+        <H1>Transclusion</H1>
+        
+        <my-modal>
+            <div>
+            <H1>Sample Title</H1>
+            <p>
+                Sample data, that is transcluded to the dialog.
+            </p>
+            </div>
+        </my-modal>
+    </body>
+</html>
