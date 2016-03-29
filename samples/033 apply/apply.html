@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="applyApp">
+    <head>
+        <script src="../node_modules/angular/angular.js"></script>
+        <script src="apply.js"></script>
+    </head>
+    
+    <body ng-controller="applyController">
+        <ul ng-repeat="item in items">
+            <li>{{ item.text }}</li>
+        </ul>
+        
+        <button my-button-non-apply>Add (no apply)</button>
+        <button my-button-apply>Add (with apply)</button>
+    </body>
+</html>

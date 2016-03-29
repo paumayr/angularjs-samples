@@ -1,9 +1,8 @@
-var dataModule = angular.module('data', []);
-
-function DataService() {
+angular.module('data', [])
+.service('DataService', function() {
 	var that = this;
 	this.fruits = ['Apples', 'Bananas', 'Limes'];
-	 
+	
 	this.getFruits = function() {
 		return that.fruits;
 	};
@@ -11,9 +10,5 @@ function DataService() {
 	this.addFruit = function(newFruit) {
 		that.fruits.push(newFruit);	
 	};
-}
-
-dataModule.factory('DataService', function() {
-	return new DataService(); 
 });
 

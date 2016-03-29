@@ -9,8 +9,13 @@ describe('mytestsuite', function() {
 	
 	it('should be true', function() {
 		var $scope = {};
-		var controller = $controller('SampleController', { $scope: $scope });
-		expect($scope.theNumber <= 100).toBe(true);
-		expect($scope.theNumber >= 0).toBe(true);
+		var realRandom = Math.random;
+		try {
+			Math.random = function() { return 0.4; }
+			var controller = $controller('SampleController', { $scope: $scope });
+			expect($scope.theNumber == 40).toBe(true);
+		} finally {
+			Math.random = realRandom;
+		}
 	});
 })

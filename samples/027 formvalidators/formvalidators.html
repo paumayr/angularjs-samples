@@ -17,6 +17,7 @@
 						name="nameCtrl"
 						placeholder="Vorname" 
 						ng-model="name"
+						required
 						ng-minlength="3"
 						ng-maxlength="15">
 				<div ng-show="userInfoForm.$dirty">
@@ -43,8 +44,7 @@
 						name="email"
 						placeholder="Email" 
 						ng-model="email"
-						ng-pattern="/[\w]*\@r-software.at/"
-						ng-required="name == 'phil'">
+						ng-pattern="/[\w]*\@r-software.at/">
 				<p class="help-block"
 						ng-show="userInfoForm.email.$error.pattern">
 					Must be a r-software.at address
@@ -59,10 +59,7 @@
 					Email field is required.
 				</p>
 			</div>
-			
-			<input type="password" ng-model="pw">
-			<input type="password" ng-model="pwConfirm">
-								
+										
 			<button  class="btn btn-primary" ng-disabled="userInfoForm.$pristine || userInfoForm.$invalid">Save</button>
 		</form>
 	</body>

@@ -12,7 +12,7 @@ app.post('/newgame', function(req, res) {
   };
   
   games.push(newGame);
-  res.send(JSON.stringify({ id: newGame.id, guessCount: newGame.guessCount }));
+  res.send({ id: newGame.id, guessCount: newGame.guessCount });
 });
 
 app.get('/try/:id/:guess', function(req, res) {
@@ -28,18 +28,17 @@ app.get('/try/:id/:guess', function(req, res) {
       console.log('game ' + game.id + ': finished!');
       game.endTime = new Date().getTime();
       game.finished = true;
-      res.send(JSON.stringify({ result: 'correct', guessCount: game.guessCount, theNumber: game.theNumber }));
+      res.send({ result: 'correct', guessCount: game.guessCount, theNumber: game.theNumber });
     } else if (guess > game.theNumber) {
       console.log('game ' + game.id + ': ' + guess + ' is too high!');
-      res.send(JSON.stringify({ result: 'toohigh', guessCount: game.guessCount }));
+      res.send({ result: 'toohigh', guessCount: game.guessCount });
     } else if (guess < game.theNumber) {
       console.log('game ' + game.id + ': ' + guess + ' is too low!');
-      res.send(JSON.stringify({ result: 'toolow', guessCount: game.guessCount }));
+      res.send({ result: 'toolow', guessCount: game.guessCount });
     }
   } else {
     res.sendStatus(400);
   }
-  
 });
 
 var server = app.listen(3000, function () {
