@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="qServiceApp">
+    <head>
+        <script src="../node_modules/angular/angular.js"></script>
+        <script src="qservice.js"></script>
+    </head>
+    
+    <body ng-controller="SampleController">
+        <H1>QService App</H1>
+        
+        <button ng-click="fetchDetails()">Run</button>
+        
+        <ul>
+           <li ng-repeat="item in itemDetails">
+               {{ item.heading }}
+           </li>
+        </ul>
+    </body>
+</html>
