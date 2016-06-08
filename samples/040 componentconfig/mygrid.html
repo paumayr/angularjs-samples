@@ -1,0 +1,17 @@
+<div>
+    <table class="table table-condensed">
+        <thead>
+            <td ng-repeat="column in $ctrl.columns"
+                ng-bind="column.header">
+            </td>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in $ctrl.rows">
+                <td ng-repeat="col in $ctrl.columns"
+                    ng-bind="col.valueFunc(row)">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div ng-transclude></div>
+<div>

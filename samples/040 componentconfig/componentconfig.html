@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="componentConfigApp">
+    <head>
+        <script src="../node_modules/angular/angular.js"></script>
+        <script src="componentconfig.js"></script>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css" />
+    </head>
+
+    <body class="container">
+        <H1>Component Configuration</H1>
+
+        <my-grid>
+            <my-grid-column content="from | date: 'short'" header="From">
+            </my-grid-column>
+            <my-grid-column content="until | date: 'short'" header="Until">
+            </my-grid-column>
+            <my-grid-column content="description" header="Description">
+            </my-grid-column>
+        </my-grid>
+    </body>
+</html>

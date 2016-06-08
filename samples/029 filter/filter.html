@@ -12,13 +12,13 @@
 		<div class="form-control-static">{{ myNumber }}</div>
 		
 		<label>MyNumber (number filter)</label>	
-		<div class="form-control-static">{{ myNumber | number : 5  }}</div>
+		<div class="form-control-static">{{ myNumber | number : 10  }}</div>
 
-		<h1>Filter-Filter</h1>
+		<h1>Filter-Filter </h1>
 		<label>Filter: </label>
 		<input type="text" ng-model="searchName">
 		<ul>
-			<li ng-repeat="person in people | filter:searchName | limitTo: 3 ">
+			<li ng-repeat="person in people | filter:searchName | limitTo: 3">
 				{{person.name}}
 			</li>
 		</ul>
