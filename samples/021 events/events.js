@@ -1,11 +1,14 @@
 var app = angular.module('eventsApp', []);
 
-app.controller('eventsController', ['$scope', '$rootScope' function($scope, $rootScope) {
+app.controller('eventsController', ['$scope', '$rootScope', function($scope, $rootScope) {
 	$scope.broadcastMessage = function() {
 		$scope.$broadcast('downevent', { message: 'It is ' + new Date() });	
+	
+
 	};
-    
-    $rootScope.$broadcast('languagechange', { language: 'en-us'});
+
+	$scope.changeLanguage = function() {
+	}
 	
 	$scope.currentMessage = "No Message from nested";
 	$scope.$on('upevent', function(e, args) {

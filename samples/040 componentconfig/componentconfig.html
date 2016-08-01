@@ -9,12 +9,12 @@
     <body class="container">
         <H1>Component Configuration</H1>
 
-        <my-grid>
-            <my-grid-column content="from | date: 'short'" header="From">
+        <my-grid my-data="Batches?$filter=(from &ge; '')">
+            <my-grid-column content="from | date: 'short'" header="Von">
             </my-grid-column>
-            <my-grid-column content="until | date: 'short'" header="Until">
+            <my-grid-column content="until | date: 'short'" header="Bis">
             </my-grid-column>
-            <my-grid-column content="description" header="Description">
+            <my-grid-column content="description" header="Beschreibung">
             </my-grid-column>
         </my-grid>
     </body>
