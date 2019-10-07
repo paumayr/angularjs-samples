@@ -1,7 +1,7 @@
 angular.module('testComponentModule', [])
 .component('testComponent', {
    templateUrl: 'testComponent.html',
-   controller: [function($scope) {
+   controller: ['$scope', function($scope) {
        this.$onInit = function() {
            console.log('on Init');
        };

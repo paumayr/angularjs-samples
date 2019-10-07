@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="asyncValidatorApp">
+    <head>
+        <script src="../node_modules/angular/angular.js"></script>
+        <script src="asyncvalidator.js"></script>
+        <style>
+            .error {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+
+        <form name="form1">
+            <input type="text" name="nameField" ng-model="name"
+                    ng-model-options="{ updateOn: 'blur' }"
+                    unique-name />
+            <span ng-show="form1.nameField.$pending">Uniqueness pending.</span>
+            <span class="error" ng-show="form1.nameField.$error.uniqueName">Name must be unique</span>
+        </form>
+        <button ng-disabled="form1.$invalid">Submit</button>
+    </body>
+</html>

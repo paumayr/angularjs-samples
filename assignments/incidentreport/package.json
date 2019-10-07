@@ -1,0 +1,15 @@
+{
+  "name": "incidentreport",
+  "version": "1.0.0",
+  "description": "",
+  "main": "incidentreport.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.7.8",
+    "bootstrap": "^4.3.1"
+  }
+}

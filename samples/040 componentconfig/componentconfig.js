@@ -36,7 +36,7 @@ angular.module('componentConfigApp', [])
 .component('myGridColumn',{
   transclude: true,
   require: {
-    myGridCtrl: '^^myGrid'
+    myGridCtrl: '^myGrid'
   },
   bindings: {
     content: '@',

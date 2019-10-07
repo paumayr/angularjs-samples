@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="incidentReportApp">
+    <head>
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="incidentreport.js"></script>
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="incidentreport.css">
+    </head>
+    <body>
+        <h1>Incident Report</h1>
+
+        <form name="f" ng-controller="incidentReportCtrl">
+            <div>
+                <span>Name</span>
+                <input type="text" name="nameField" ng-model="data.name" required />
+            </div>
+            <div>
+                <span>Title</span>
+                <input type="text" name="titleField" ng-model="data.title" required />
+            </div>
+            <div>
+                <span>Description</span>
+                <textarea type="text" name="descriptionField" ng-model="data.description" required>
+                </textarea>
+            </div>
+
+            <div>
+                <span>Cost Center</span>
+                <select ng-model="data.costcenter">
+                    <option value="130040">Administration</option>
+                    <option value="130050">Leads</option>
+                    <option value="130070">Internal Development</option>
+                    <option value="130090">Research & Development</option>
+                </select>
+            </div>
+
+            <div>
+                <span>Severity</span>
+                <input type="radio" id="low" name="severityField" ng-model="data.severity" value="low" />
+                <label for="low">Low</label>
+                
+                <input type="radio" id="middle" name="severityField" ng-model="data.severity" value="middle" />
+                <label for="middle">Middle</label>
+                
+                <input type="radio" id="high" name="severityField" ng-model="data.severity" value="high" />
+                <label for="high">High</label>
+            </div>
+
+            <div ng-if="data.severity == 'high'">
+                <div>
+                    <span>Phone number:</span>
+                    <input type="tel" ng-model="data.phonenumber">
+                </div>
+                <div>
+                    <input id="confirmcosts" type="checkbox" />
+                    <label for="confirmcosts">I understand that additional costs will be booked due to higher priority</label>
+                </div>
+            </div>
+            <div>
+                    {{ data | json}}
+            </div>
+        </form>
+    </body>
+</html>
